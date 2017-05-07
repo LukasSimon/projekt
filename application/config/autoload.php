@@ -104,6 +104,7 @@ $autoload['helper'] = array();
 |
 */
 $autoload['config'] = array();
+$autoload['helper'] = array('url');
 
 /*
 | -------------------------------------------------------------------
