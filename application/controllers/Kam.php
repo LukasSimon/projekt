@@ -7,21 +7,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Date: 07.05.2017
  * Time: 23:33
  */
-class Odkial extends CI_Controller
+class Kam extends CI_Controller
 {
     function __construct()
     {
         parent:: __construct();
-        $this->load->model('odkial_m','odkialm');
+        $this->load->model('kam_m','kamm');
     }
 
     public function index()
     {
-        $this->data['view_data']= $this->odkialm->view_data();
+        $this->data['view_data']= $this->kamm->view_data();
 
         $this->load->view('template/header', $this->data, FALSE);
         $this->load->view('template/navigation');
-        $this->load->view('odkial/index', $this->data, FALSE);
+        $this->load->view('kam/index', $this->data, FALSE);
         $this->load->view('template/footer');
     }
 
@@ -29,7 +29,7 @@ class Odkial extends CI_Controller
     {
 
         $this->load->view('template/header');
-        $this->load->view('odkial/add');
+        $this->load->view('kam/add');
         $this->load->view('template/footer');
     }
     /****************************  END OPEN ADD FORM FILE ********************/
@@ -41,9 +41,9 @@ class Odkial extends CI_Controller
         $data = array('Obec'                   => $this->input->post('Obec'),
             'Ulica'                      => $this->input->post('Ulica'));
 
-        $insert = $this->odkialm->insert_data($data);
-        $this->session->set_flashdata('odkial', 'Vaše dáta boli úspešne pridané');
-        redirect(base_url('index.php/odkial'));
+        $insert = $this->kamm->insert_data($data);
+        $this->session->set_flashdata('kam', 'Vaše dáta boli úspešne pridané');
+        redirect(base_url('index.php/kam'));
     }
     /****************************  END INSERT FORM DATA ************************/
 
@@ -51,7 +51,7 @@ class Odkial extends CI_Controller
     /****************************  START FETCH OR VIEW FORM DATA ***************/
     public function view_data()
     {
-        $this->data['view_data']= $this->odkialm->view_data();
+        $this->data['view_data']= $this->kamm->view_data();
         $this->load->view('welcome_message', $this->data, FALSE);
     }
     /****************************  END FETCH OR VIEW FORM DATA ***************/
@@ -60,9 +60,9 @@ class Odkial extends CI_Controller
     /****************************  START OPEN EDIT FORM WITH DATA *************/
     public function edit_data($id)
     {
-        $this->data['edit_data']= $this->odkialm->edit_data($id);
+        $this->data['edit_data']= $this->kamm->edit_data($id);
         $this->load->view('template/header');
-        $this->load->view('odkial/edit', $this->data, FALSE);
+        $this->load->view('kam/edit', $this->data, FALSE);
         $this->load->view('template/footer');
     }
     /****************************  END OPEN EDIT FORM WITH DATA ***************/
@@ -75,9 +75,9 @@ class Odkial extends CI_Controller
             'Ulica'                      => $this->input->post('Ulica'));
 
         $this->db->where('id', $id);
-        $this->db->update('odkial', $data);
-        $this->session->set_flashdata('odkial', 'Vaše dáta boli úspešne upravené');
-        redirect(base_url('index.php/odkial'));
+        $this->db->update('kam', $data);
+        $this->session->set_flashdata('kam', 'Vaše dáta boli úspešne upravené');
+        redirect(base_url('index.php/kam'));
     }
     /****************************  END UPDATE DATA ****************************/
 
@@ -86,8 +86,8 @@ class Odkial extends CI_Controller
     public function delete_data($id)
     {
         $this->db->where('id', $id);
-        $this->db->delete('odkial');
-        $this->session->set_flashdata('odkial', 'Vaše dáta boli úspešne odstranené');
-        redirect(base_url('index.php/odkial'));
+        $this->db->delete('kam');
+        $this->session->set_flashdata('kam', 'Vaše dáta boli úspešne odstranené');
+        redirect(base_url('index.php/kam'));
     }
 }

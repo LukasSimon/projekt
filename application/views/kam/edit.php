@@ -8,11 +8,11 @@
             if(isset($edit_data) && is_array($edit_data) && count($edit_data)): $i=1;
                 foreach ($edit_data as $key => $data) {
                     ?>
-                    <form method="post" action="<?php echo site_url('Odkial/update_data/'.$data['id'].''); ?>" name="data_register">
-                        <label for="Obec" style="color: white">Enter Obec</label>
+                    <form method="post" action="<?php echo site_url('Kam/update_data/'.$data['id'].''); ?>" name="data_register">
+                        <label for="Obec" style="color: white">Obec</label>
                         <input type="text" class="form-control" name="Obec" value="<?php echo $data['Obec']; ?>" required >
                         <br>
-                        <label for="Ulica" style="color: white">Enter ulica</label>
+                        <label for="Ulica" style="color: white">Ulica</label>
                         <input type="text" class="form-control" name="Ulica" value="<?php echo $data['Ulica']; ?>" required>
                         <br>
                         <br><br>
