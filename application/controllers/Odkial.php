@@ -38,11 +38,11 @@ class Odkial extends CI_Controller
     /****************************  START INSERT FORM DATA ********************/
     public function submit_data()
     {
-        $data = array('Znacka'                   => $this->input->post('Znacka'),
-            'Evidencne_cislo'                      => $this->input->post('Evidencne_cislo'));
+        $data = array('Obec'                   => $this->input->post('Obec'),
+            'Ulica'                      => $this->input->post('Ulica'));
 
         $insert = $this->odkialm->insert_data($data);
-        $this->session->set_flashdata('message', 'Vaše dáta boli úspešne pridané');
+        $this->session->set_flashdata('odkial', 'Vaše dáta boli úspešne pridané');
         redirect(base_url('index.php/odkial'));
     }
     /****************************  END INSERT FORM DATA ************************/
@@ -71,12 +71,12 @@ class Odkial extends CI_Controller
     /****************************  START UPDATE DATA *************************/
     public function update_data($id)
     {
-        $data = array('Znacka'                   => $this->input->post('Znacka'),
-            'Evidencne_cislo'                      => $this->input->post('Evidencne_cislo'));
+        $data = array('Obec'                   => $this->input->post('Obec'),
+            'Ulica'                      => $this->input->post('Ulica'));
 
         $this->db->where('id', $id);
         $this->db->update('auta', $data);
-        $this->session->set_flashdata('message', 'Vaše dáta boli úspešne upravené');
+        $this->session->set_flashdata('odkial', 'Vaše dáta boli úspešne upravené');
         redirect(base_url('index.php/odkial'));
     }
     /****************************  END UPDATE DATA ****************************/
@@ -86,8 +86,8 @@ class Odkial extends CI_Controller
     public function delete_data($id)
     {
         $this->db->where('id', $id);
-        $this->db->delete('auta');
-        $this->session->set_flashdata('message', 'Vaše dáta boli úspešne odstranené');
+        $this->db->delete('odkial');
+        $this->session->set_flashdata('odkial', 'Vaše dáta boli úspešne odstranené');
         redirect(base_url('index.php/odkial'));
     }
 }
