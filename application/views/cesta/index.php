@@ -1,9 +1,9 @@
 <div id="container" class="container" >
 
     <!--******************** START SESSION SETFLASH MESSAGES *****************************-->
-    <?php if($this->session->flashdata('kam')){?>
+    <?php if($this->session->flashdata('cesta')){?>
         <div class="alert alert-success">
-            <?php echo $this->session->flashdata('kam')?>
+            <?php echo $this->session->flashdata('cesta')?>
         </div>
     <?php } ?></div>
 <!--************************* END SESSION SETFLASH MESSAGES   ************************-->
@@ -16,12 +16,12 @@
 
         <div class="row">
             <div class="col-md-12">
-                <h2>Tabuľka Kam</h2>
+                <h2>Tabuľka cesty</h2>
             </div>
         </div>
 
         <div align="left">
-            <a href="<?php echo site_url('Kam/add_data'); ?>">Pridanie nového záznamu</a>
+            <a href="<?php echo site_url('Cesta/add_data'); ?>">Pridanie nového záznamu</a>
         </div>
         <!-- /. ROW  -->
         <hr />
@@ -37,9 +37,12 @@
                             <thead>
                             <tr>
                                 <th style="color: black">No.</th>
-                                <th style="color: black">Obec</th>
-                                <th style="color: black">Ulica</th>
-                                <th style="color: black" >Možnosti</th>
+                                <th style="color: black">Dátum</th>
+                                <th style="color: black">Cena</th>
+                                <th style="color: black">Vodič</th>
+                                <th style="color: black">Odkial</th>
+                                <th style="color: black">Kam</th>
+                                <th style="color: black">Možnosti</th>
                             </tr>
                             </thead>
 
@@ -50,10 +53,14 @@
                                     ?>
                                     <tr <?php if($i%2==0){echo 'class="even"';}else{echo'class="odd"';}?>>
                                         <td><?php echo $i; ?></td>
-                                        <td><?php echo $data['Obec']; ?></td>
-                                        <td><?php echo $data['Ulica']; ?></td>
-                                        <td><a href="<?php echo site_url('Kam/edit_data/'. $data['id'].''); ?>">Edit</a></td>
-                                        <td><a href="<?php echo site_url('Kam/delete_data/'. $data['id'].''); ?>">Delete</a></td>
+                                        <td><?php echo $data['Datum']; ?></td>
+                                        <td><?php echo $data['Cena']; ?></td>
+                                        <td><?php echo $data['vMeno']; ?> <?php echo $data['vPriezvisko']; ?></td>
+                                        <td><?php echo $data['oObec']; ?> <?php echo $data['oUlica']; ?></td>
+                                        <td><?php echo $data['kObec']; ?> <?php echo $data['kUlica']; ?></td>
+
+                                        <td><a href="<?php echo site_url('Cesta/edit_data/'. $data['id'].''); ?>">Edit</a></td>
+                                        <td><a href="<?php echo site_url('Cesta/delete_data/'. $data['id'].''); ?>">Delete</a></td>
                                     </tr>
                                     <?php
                                     $i++;
