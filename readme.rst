@@ -7,4 +7,4 @@ Na stranke grafy su zobrazene styri grafy. Prvy je ciarovy graf zobrazuje trzbu 
 
 Tabulky
 
-Moja aplikacia obsahuje sest tabuliek a to tabulka auty, vodici, sluzba, odkial, kam, cesta. V kazdej tabulke je moznost pridavania, editacie a mazania zaznamov a kazda tabulka obsahuje strankovanie.
+Moja aplikacia obsahuje sest tabuliek a to tabulka auta, vodici, sluzba, odkial, kam, cesta. V kazdej tabulke je moznost pridavania, editacie a mazania zaznamov a kazda tabulka obsahuje strankovanie.
