@@ -11,7 +11,7 @@ class Grafy extends CI_Controller
 {
     function __construct(){
         parent:: __construct();
-        $this->load->model('grafy_m', 'grafym');
+        $this->load->model('Grafy_m', 'grafym');
     }
     public function index()
     {
@@ -21,7 +21,7 @@ class Grafy extends CI_Controller
         $data['adresy'] = $this->grafym->get_adresy();
         $this->load->view('template/header');
         $this->load->view('template/navigation');
-        $this->load->view('Grafy/grafy', $data);
+        $this->load->view('grafy/grafy', $data);
         $this->load->view('template/footer');
     }
 

@@ -21,7 +21,7 @@
         </div>
 
         <div align="left">
-            <a href="<?php echo site_url('Cesta/add_data'); ?>">Pridanie nového záznamu</a>
+            <a href="<?php echo base_url('index.php/Cesta/add_data'); ?>">Pridanie nového záznamu</a>
         </div>
         <!-- /. ROW  -->
         <hr />
@@ -59,8 +59,8 @@
                                         <td><?php echo $data->oObec; ?> <?php echo $data->oUlica; ?></td>
                                         <td><?php echo $data->kObec; ?> <?php echo $data->kUlica; ?></td>
 
-                                        <td><a href="<?php echo site_url('Cesta/edit_data/'. $data->id.''); ?>">Edit</a></td>
-                                        <td><a href="<?php echo site_url('Cesta/delete_data/'. $data->id.''); ?>">Delete</a></td>
+                                        <td><a href="<?php echo base_url('index.php/Cesta/edit_data/'. $data->id.''); ?>">Edit</a></td>
+                                        <td><a href="<?php echo base_url('index.php/Cesta/delete_data/'. $data->id.''); ?>">Delete</a></td>
                                     </tr>
                                     <?php
                                     $i++;

@@ -30,9 +30,6 @@
               </button>
               <a class="navbar-brand" href="<?php echo base_url(); ?>index.php/Home/index">Taxi služba</a>
           </div>
-          <div style="color: white;
-padding: 15px 50px 5px 50px;
-float: right;
-font-size: 16px;">  <a href="login.html" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+
       </nav>
       <!-- /. NAV TOP  -->

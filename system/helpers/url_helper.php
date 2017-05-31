@@ -525,7 +525,7 @@ if ( ! function_exists('redirect'))
 	 *
 	 * @param	string	$uri	URL
 	 * @param	string	$method	Redirect method
-	 *			'auto', 'location' or 'refresh'
+	 *			'Auto', 'location' or 'refresh'
 	 * @param	int	$code	HTTP Response status code
 	 * @return	void
 	 */

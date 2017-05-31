@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class vodic_m extends CI_Model
+class Vodic_m extends CI_Model
 {
     public function __construct()
     {

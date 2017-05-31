@@ -621,7 +621,7 @@
 	 */
 	function _fnAdjustColumnSizing ( settings )
 	{
-		/* Not interested in doing column width calculation if auto-width is disabled */
+		/* Not interested in doing column width calculation if Auto-width is disabled */
 		if ( settings.oFeatures.bAutoWidth !== false )
 		{
 			var columns = settings.aoColumns;

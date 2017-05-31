@@ -12,8 +12,7 @@ class Auto extends CI_Controller
     function __construct()
     {
         parent:: __construct();
-        $this->load->model('auto_m');
-        $this->load->model('auto_m','autom');
+        $this->load->model('Auto_m','autom');
     }
 
     public function index()
@@ -22,7 +21,7 @@ class Auto extends CI_Controller
 
         $this->load->view('template/header', $this->data, FALSE);
         $this->load->view('template/navigation');
-        $this->load->view('auto/index', $this->data, FALSE);
+        $this->load->view('Auto/index', $this->data, FALSE);
         $this->load->view('template/footer');
     }
 
@@ -30,7 +29,7 @@ class Auto extends CI_Controller
     {
 
         $this->load->view('template/header');
-        $this->load->view('auto/add');
+        $this->load->view('Auto/add');
         $this->load->view('template/footer');
     }
     /****************************  END OPEN ADD FORM FILE ********************/
@@ -44,7 +43,7 @@ class Auto extends CI_Controller
 
         $insert = $this->autom->insert_data($data);
         $this->session->set_flashdata('message', 'Vaše dáta boli úspešne pridané');
-        redirect(base_url('index.php/auto'));
+        redirect(base_url('index.php/Auto'));
     }
     /****************************  END INSERT FORM DATA ************************/
 
@@ -63,7 +62,7 @@ class Auto extends CI_Controller
     {
         $this->data['edit_data']= $this->autom->edit_data($id);
         $this->load->view('template/header');
-        $this->load->view('auto/edit', $this->data, FALSE);
+        $this->load->view('Auto/edit', $this->data, FALSE);
         $this->load->view('template/footer');
     }
     /****************************  END OPEN EDIT FORM WITH DATA ***************/
@@ -78,7 +77,7 @@ class Auto extends CI_Controller
         $this->db->where('id', $id);
         $this->db->update('auta', $data);
         $this->session->set_flashdata('message', 'Vaše dáta boli úspešne upravené');
-        redirect(base_url('index.php/auto'));
+        redirect(base_url('index.php/Auto'));
     }
     /****************************  END UPDATE DATA ****************************/
 
@@ -89,6 +88,6 @@ class Auto extends CI_Controller
         $this->db->where('id', $id);
         $this->db->delete('auta');
         $this->session->set_flashdata('message', 'Vaše dáta boli úspešne odstranené');
-        redirect(base_url('index.php/auto'));
+        redirect(base_url('index.php/Auto'));
     }
 }

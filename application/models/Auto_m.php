@@ -1,24 +1,25 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class kam_m extends CI_Model
+class Auto_m extends CI_Model
 {
     public function __construct()
     {
     }
 
-    public function getKam($limit = 0, $offset = 0){
-        $query = $this->db->get('kam', $limit, $offset);
-        if($query->num_rows() > 0){
-            return $query->result();
-        }else{
-            return false;
+    public function getAuto($id = FALSE)
+    {
+        if ($id === FALSE) {
+            $query = $this->db->get('auta');
+            return $query->result_array();
         }
+        $query = $this->db->get_where('auta', array('id' => $id));
+        return $query->row_array();
     }
 
     public function get_auta_by_id($id)
     {
         $this->db->where('id', $id);
-        $query = $this->db->get('kam');
+        $query = $this->db->get('auta');
         if ($query->num_rows() > 0) {
             return $query->row();
         } else {
@@ -27,29 +28,27 @@ class kam_m extends CI_Model
     }
 
     public function insert_data($data){
-        $this->db->insert('kam', $data);
+        $this->db->insert('auta', $data);
         return TRUE;
     }
     /**************************  END INSERT QUERY ****************/
 
 
     /*************  START SELECT or VIEW ALL QUERY ***************/
-    public function view_data($limit = 0, $offset = 0){
-        $query = $this->db->get('kam', $limit, $offset);
-        if($query->num_rows() > 0){
-            return $query->result();
-        }else{
-            return false;
-        }
+    public function view_data(){
+        $query=$this->db->query("SELECT ud.*
+                                 FROM auta ud 
+                                 ORDER BY ud.id ASC");
+        return $query->result_array();
     }
     /***************  END SELECT or VIEW ALL QUERY ***************/
 
 
     /*************  START EDIT PARTICULER DATA QUERY *************/
     public function edit_data($id){
-        $query=$this->db->query("SELECT k.*
-                                 FROM kam k 
-                                 WHERE k.id = $id");
+        $query=$this->db->query("SELECT ud.*
+                                 FROM auta ud 
+                                 WHERE ud.id = $id");
         return $query->result_array();
     }
     /*************  END EDIT PARTICULER DATA QUERY ***************/

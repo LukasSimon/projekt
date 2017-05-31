@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class grafy_m extends CI_Model{
+class Grafy_m extends CI_Model{
 
 
     public function get_sluzby(){
@@ -16,7 +16,7 @@ class grafy_m extends CI_Model{
     public function get_vodicov(){
         $query = $this->db->query("SELECT v.Meno AS meno, v.Priezvisko AS priezvisko, SUM(c.Cena) AS cena 
                                    FROM cesta c
-                                   INNER JOIN Vodici v ON v.id = c.Vodici_id 
+                                   INNER JOIN vodici v ON v.id = c.Vodici_id 
                                    GROUP BY v.id");
         if($query->num_rows() > 0){
             return $query->result();

@@ -12,7 +12,7 @@ class Odkial extends CI_Controller
     function __construct()
     {
         parent:: __construct();
-        $this->load->model('odkial_m','odkialm');
+        $this->load->model('Odkial_m','odkialm');
     }
 
     public function index()
@@ -29,8 +29,8 @@ class Odkial extends CI_Controller
 
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
-        $config['first_link'] = false;
-        $config['last_link'] = false;
+        $config['first_link'] = 'prvý';
+        $config['last_link'] = 'posledný';
         $config['first_tag_open'] = '<li>';
         $config['first_tag_close'] = '</li>';
         $config['prev_link'] = '&laquo';

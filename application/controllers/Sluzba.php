@@ -12,7 +12,7 @@ class Sluzba extends CI_Controller
     public function __construct()
     {
         parent:: __construct();
-        $this->load->model('sluzba_m', 'sluzbam');
+        $this->load->model('Sluzba_m', 'sluzbam');
     }
 
     public function index(){

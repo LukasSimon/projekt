@@ -21,7 +21,7 @@
         </div>
 
         <div align="left">
-            <a href="<?php echo site_url('Vodici/add_data'); ?>">Pridanie nového záznamu</a>
+            <a href="<?php echo base_url('index.php/Vodici/add_data'); ?>">Pridanie nového záznamu</a>
         </div>
         <!-- /. ROW  -->
         <hr />
@@ -56,8 +56,8 @@
                                         <td><?php echo $data['Priezvisko']; ?></td>
                                         <td><?php echo $data['Telefonne_cislo']; ?></td>
                                         <td><?php echo $data['aZnacka']; ?></td>
-                                        <td><a href="<?php echo site_url('Vodici/edit_data/'. $data['id'].''); ?>">Edit</a></td>
-                                        <td><a href="<?php echo site_url('Vodici/delete_data/'. $data['id'].''); ?>">Delete</a></td>
+                                        <td><a href="<?php echo base_url('index.php/Vodici/edit_data/'. $data['id'].''); ?>">Edit</a></td>
+                                        <td><a href="<?php echo base_url('index.php/Vodici/delete_data/'. $data['id'].''); ?>">Delete</a></td>
                                     </tr>
                                     <?php
                                     $i++;

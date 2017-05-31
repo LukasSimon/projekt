@@ -8,7 +8,7 @@
             if(isset($edit_data) && is_array($edit_data) && count($edit_data)): $i=1;
                 foreach ($edit_data as $key => $data) {
                     ?>
-                    <form method="post" action="<?php echo site_url('Auto/update_data/'.$data['id'].''); ?>" name="data_register">
+                    <form method="post" action="<?php echo base_url('index.php/Auto/update_data/'.$data['id'].''); ?>" name="data_register">
                         <label for="Znacka" style="color: white">Enter znacka</label>
                         <input type="text" class="form-control" name="Znacka" value="<?php echo $data['Znacka']; ?>" required >
                         <br>

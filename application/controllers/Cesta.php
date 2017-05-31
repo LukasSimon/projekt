@@ -12,7 +12,7 @@ class Cesta extends CI_Controller
     public function __construct()
     {
         parent:: __construct();
-        $this->load->model('cesta_m', 'cestam');
+        $this->load->model('Cesta_m', 'cestam');
     }
 
     public function index(){

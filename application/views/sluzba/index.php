@@ -21,7 +21,7 @@
         </div>
 
         <div align="left">
-            <a href="<?php echo site_url('Sluzba/add_data'); ?>">Pridanie nového záznamu</a>
+            <a href="<?php echo base_url('index.php/Sluzba/add_data'); ?>">Pridanie nového záznamu</a>
         </div>
         <!-- /. ROW  -->
         <hr />
@@ -52,8 +52,8 @@
                                         <td><?php echo $data->id; ?></td>
                                         <td><?php echo $data->Datum; ?></td>
                                         <td><?php echo $data->vMeno; ?> <?php echo $data->vPriezvisko; ?></td>
-                                        <td><a href="<?php echo site_url('Sluzba/edit_data/'. $data->id.''); ?>">Edit</a></td>
-                                        <td><a href="<?php echo site_url('Sluzba/delete_data/'. $data->id.''); ?>">Delete</a></td>
+                                        <td><a href="<?php echo base_url('index.php/Sluzba/edit_data/'. $data->id.''); ?>">Edit</a></td>
+                                        <td><a href="<?php echo base_url('index.php/Sluzba/delete_data/'. $data->id.''); ?>">Delete</a></td>
                                     </tr>
                                     <?php
                                     $i++;

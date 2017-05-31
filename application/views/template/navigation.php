@@ -11,6 +11,7 @@
             <li>
                 <a   href="<?php echo base_url(); ?>index.php/Grafy"><i class="fa fa-bar-chart-o fa-3x"></i> Grafy</a>
             </li>
+
             <li>
                 <a href="#"><i class="fa fa-sitemap fa-3x"></i> Tabuľky<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
@@ -34,6 +35,7 @@
                     </li>
                 </ul>
             </li>
+
 
 
 

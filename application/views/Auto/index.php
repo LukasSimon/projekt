@@ -21,7 +21,7 @@
             </div>
 
             <div align="left">
-                <a href="<?php echo site_url('Auto/add_data'); ?>">Pridanie nového záznamu</a>
+                <a href="<?php echo base_url('index.php/Auto/add_data'); ?>">Pridanie nového záznamu</a>
             </div>
             <!-- /. ROW  -->
             <hr />
@@ -52,8 +52,8 @@
                         <td><?php echo $i; ?></td>
                         <td><?php echo $data['Znacka']; ?></td>
                         <td><?php echo $data['Evidencne_cislo']; ?></td>
-                        <td><a href="<?php echo site_url('Auto/edit_data/'. $data['id'].''); ?>">Edit</a></td>
-                        <td><a href="<?php echo site_url('Auto/delete_data/'. $data['id'].''); ?>">Delete</a></td>
+                        <td><a href="<?php echo base_url('index.php/Auto/edit_data/'. $data['id'].''); ?>">Edit</a></td>
+                        <td><a href="<?php echo base_url('index.php/Auto/delete_data/'. $data['id'].''); ?>">Delete</a></td>
                     </tr>
                     <?php
                     $i++;

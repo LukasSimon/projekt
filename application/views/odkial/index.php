@@ -16,12 +16,12 @@
 
         <div class="row">
             <div class="col-md-12">
-                <h2>Tabuľka Odkiaľ</h2>
+                <h2>Tabuľka odkiaľ</h2>
             </div>
         </div>
 
         <div align="left">
-            <a href="<?php echo site_url('Odkial/add_data'); ?>">Pridanie nového záznamu</a>
+            <a href="<?php echo base_url('index.php/Odkial/add_data'); ?>">Pridanie nového záznamu</a>
         </div>
         <!-- /. ROW  -->
         <hr />
@@ -37,7 +37,7 @@
                             <thead>
                             <tr>
                                 <th style="color: black">No.</th>
-                                <th style="color: black">Obec</th>
+                                <th style="color: black">Mesto</th>
                                 <th style="color: black">Ulica</th>
                                 <th style="color: black">Možnosti</th>
                             </tr>
@@ -52,8 +52,8 @@
                                         <td><?php echo $data->id; ?></td>
                                         <td><?php echo $data->Obec; ?></td>
                                         <td><?php echo $data->Ulica; ?></td>
-                                        <td><a href="<?php echo site_url('Odkial/edit_data/'. $data->id.''); ?>">Edit</a></td>
-                                        <td><a href="<?php echo site_url('Odkial/delete_data/'. $data->id.''); ?>">Delete</a></td>
+                                        <td><a href="<?php echo base_url('index.php/Odkial/edit_data/'. $data->id.''); ?>">Edit</a></td>
+                                        <td><a href="<?php echo base_url('index.php/Odkial/delete_data/'. $data->id.''); ?>">Delete</a></td>
                                     </tr>
                                     <?php
                                     $i++;
@@ -69,7 +69,7 @@
 
                             </tbody>
                         </table>
-                       
+
                             <?=$this->pagination->create_links() ?>
 
                     </div>

@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class odkial_m extends CI_Model
+class Odkial_m extends CI_Model
 {
     public function __construct()
     {

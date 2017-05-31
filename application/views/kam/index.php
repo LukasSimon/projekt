@@ -16,12 +16,12 @@
 
         <div class="row">
             <div class="col-md-12">
-                <h2>Tabuľka Kam</h2>
+                <h2>Tabuľka kam</h2>
             </div>
         </div>
 
         <div align="left">
-            <a href="<?php echo site_url('Kam/add_data'); ?>">Pridanie nového záznamu</a>
+            <a href="<?php echo base_url('index.php/Kam/add_data'); ?>">Pridanie nového záznamu</a>
         </div>
         <!-- /. ROW  -->
         <hr />
@@ -37,7 +37,7 @@
                             <thead>
                             <tr>
                                 <th style="color: black">No.</th>
-                                <th style="color: black">Obec</th>
+                                <th style="color: black">Mesto</th>
                                 <th style="color: black">Ulica</th>
                                 <th style="color: black" >Možnosti</th>
                             </tr>
@@ -52,8 +52,8 @@
                                         <td><?php echo $data->id; ?></td>
                                         <td><?php echo $data->Obec; ?></td>
                                         <td><?php echo $data->Ulica; ?></td>
-                                        <td><a href="<?php echo site_url('Kam/edit_data/'. $data->id.''); ?>">Edit</a></td>
-                                        <td><a href="<?php echo site_url('Kam/delete_data/'. $data->id.''); ?>">Delete</a></td>
+                                        <td><a href="<?php echo base_url('index.php/Kam/edit_data/'. $data->id.''); ?>">Edit</a></td>
+                                        <td><a href="<?php echo base_url('index.php/Kam/delete_data/'. $data->id.''); ?>">Delete</a></td>
                                     </tr>
                                     <?php
                                     $i++;

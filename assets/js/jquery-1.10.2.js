@@ -6171,7 +6171,7 @@ if ( window.getComputedStyle ) {
 		ret = computed ? computed[ name ] : undefined;
 
 		// Avoid setting ret to empty string here
-		// so we don't default to auto
+		// so we don't default to Auto
 		if ( ret == null && style && style[ name ] ) {
 			ret = style[ name ];
 		}
@@ -6621,7 +6621,7 @@ function getWidthOrHeight( elem, name, extra ) {
 		// for getComputedStyle silently falls back to the reliable elem.style
 		valueIsBorderBox = isBorderBox && ( support.boxSizingReliable() || val === elem.style[ name ] );
 
-		// Normalize "", auto, and prepare for extra
+		// Normalize "", Auto, and prepare for extra
 		val = parseFloat( val ) || 0;
 	}
 
@@ -7000,7 +7000,7 @@ Tween.propHooks = {
 			// so, simple values such as "10px" are parsed to Float.
 			// complex values such as "rotate(1rad)" are returned as is.
 			result = jQuery.css( tween.elem, tween.prop, "" );
-			// Empty strings, null, undefined and "auto" are converted to 0.
+			// Empty strings, null, undefined and "Auto" are converted to 0.
 			return !result || result === "auto" ? 0 : result;
 		},
 		set: function( tween ) {
@@ -8153,7 +8153,7 @@ if ( !getSetAttribute ) {
 		}
 	};
 
-	// Set width and height to auto instead of 0 on empty string( Bug #8150 )
+	// Set width and height to Auto instead of 0 on empty string( Bug #8150 )
 	// This is for removals
 	jQuery.each([ "width", "height" ], function( i, name ) {
 		jQuery.attrHooks[ name ] = {
@@ -8714,7 +8714,7 @@ function ajaxHandleResponses( s, jqXHR, responses ) {
 		contents = s.contents,
 		dataTypes = s.dataTypes;
 
-	// Remove auto dataType and get content-type in the process
+	// Remove Auto dataType and get content-type in the process
 	while ( dataTypes[ 0 ] === "*" ) {
 		dataTypes.shift();
 		if ( ct === undefined ) {
@@ -8796,12 +8796,12 @@ function ajaxConvert( s, response, jqXHR, isSuccess ) {
 
 		if ( current ) {
 
-			// There's only work to do if current dataType is non-auto
+			// There's only work to do if current dataType is non-Auto
 			if ( current === "*" ) {
 
 				current = prev;
 
-			// Convert response if prev dataType is non-auto and differs from current
+			// Convert response if prev dataType is non-Auto and differs from current
 			} else if ( prev !== "*" && prev !== current ) {
 
 				// Seek a direct converter
@@ -9191,7 +9191,7 @@ jQuery.extend({
 		// Get transport
 		transport = inspectPrefiltersOrTransports( transports, s, options, jqXHR );
 
-		// If no transport, we auto-abort
+		// If no transport, we Auto-abort
 		if ( !transport ) {
 			done( -1, "No Transport" );
 		} else {
@@ -10074,7 +10074,7 @@ jQuery.offset = {
 		calculatePosition = ( position === "absolute" || position === "fixed" ) &&
 			jQuery.inArray("auto", [ curCSSTop, curCSSLeft ] ) > -1;
 
-		// need to be able to calculate position if either top or left is auto and position is either absolute or fixed
+		// need to be able to calculate position if either top or left is Auto and position is either absolute or fixed
 		if ( calculatePosition ) {
 			curPosition = curElem.position();
 			curTop = curPosition.top;
@@ -10170,7 +10170,7 @@ jQuery.fn.extend({
 		}
 
 		// Subtract parent offsets and element margins
-		// note: when an element has margin: auto the offsetLeft and marginLeft
+		// note: when an element has margin: Auto the offsetLeft and marginLeft
 		// are the same in Safari causing offset.left to incorrectly be 0
 		return {
 			top:  offset.top  - parentOffset.top - jQuery.css( elem, "marginTop", true ),

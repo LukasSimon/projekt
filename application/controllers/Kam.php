@@ -12,7 +12,7 @@ class Kam extends CI_Controller
     function __construct()
     {
         parent:: __construct();
-        $this->load->model('kam_m','kamm');
+        $this->load->model('Kam_m','kamm');
     }
 
     public function index()
@@ -29,8 +29,8 @@ class Kam extends CI_Controller
 
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
-        $config['first_link'] = false;
-        $config['last_link'] = false;
+        $config['first_link'] = 'prvý';
+        $config['last_link'] = 'posledný';
         $config['first_tag_open'] = '<li>';
         $config['first_tag_close'] = '</li>';
         $config['prev_link'] = '&laquo';

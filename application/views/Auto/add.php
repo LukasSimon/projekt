@@ -3,7 +3,7 @@
         <div class="col-md-8 col-md-offset-2">
             <h2 class="text-center">Pridanie záznamu</h2>
             <br><br>
-            <form method="post" action="<?php echo site_url('Auto/submit_data'); ?>" name="data_register">
+            <form method="post" action="<?php echo base_url('index.php/Auto/submit_data'); ?>" name="data_register">
                 <label for="Znacka" style="color: white">Znacka</label>
                 <input type="text" class="form-control" name="Znacka" required >
                 <br>
