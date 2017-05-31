@@ -49,10 +49,7 @@ class Cesta_m extends CI_Model
         $this->db->insert('cesta', $data);
         return TRUE;
     }
-    /**************************  END INSERT QUERY ****************/
 
-
-    /*************  START SELECT or VIEW ALL QUERY ***************/
     public function view_data($limit = 0, $offset = 0){
         if($offset != NULL) {
             $query=$this->db->query("SELECT c.id, c.Datum, c.Cena, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko, o.Obec AS oObec, o.Ulica AS oUlica, k.Obec AS kObec, k.Ulica AS kUlica
@@ -71,9 +68,6 @@ class Cesta_m extends CI_Model
                                  INNER JOIN kam k ON c.Kam_id = k.id
                                  ORDER BY c.id
                                  LIMIT 0, $limit");
-
-
-
             }
 
             if($query->num_rows() > 0){
@@ -82,17 +76,11 @@ class Cesta_m extends CI_Model
                 return false;
             }
     }
-    /***************  END SELECT or VIEW ALL QUERY ***************/
 
-
-    /*************  START EDIT PARTICULER DATA QUERY *************/
     public function edit_data($id){
         $query=$this->db->query("SELECT c. *
                                  FROM cesta c 
                                  WHERE c.id = $id");
-
         return $query->result_array();
     }
-    /*************  END EDIT PARTICULER DATA QUERY ***************/
-
 }

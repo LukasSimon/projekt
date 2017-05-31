@@ -1,12 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
- * Created by PhpStorm.
- * User: Lukáš
- * Date: 07.05.2017
- * Time: 23:33
- */
 class Cesta extends CI_Controller
 {
     public function __construct()
@@ -26,7 +20,6 @@ class Cesta extends CI_Controller
             'per_page'   => 4,
 
         );
-
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
         $config['first_link'] = 'prvý';
@@ -47,11 +40,7 @@ class Cesta extends CI_Controller
         $config['num_tag_close'] = '</li>';
 
         $this->pagination->initialize($config);
-
-
-
         $this->data['view_data']= $this->cestam->view_data($config['per_page'], $this->uri->segment(3));
-
 
         $this->load->view('template/header', $this->data, FALSE);
         $this->load->view('template/navigation');
@@ -71,7 +60,6 @@ class Cesta extends CI_Controller
 
     public function submit_data()
     {
-
         $str = $this->input->post('Vodici_id');
         $boolean = 1;
         $Meno = "";
@@ -95,12 +83,6 @@ class Cesta extends CI_Controller
                                     WHERE Meno LIKE '$Meno' AND Priezvisko LIKE '$Priezvisko'");
         $result = $query->result();
         $ID_vodici = $result[0]->id;
-
-        echo $ID_vodici;
-
-
-
-
 
 
         $str = $this->input->post('Odkial_id');
@@ -126,10 +108,6 @@ class Cesta extends CI_Controller
                                     WHERE Obec LIKE '$Obec_odkial' AND Ulica LIKE '$Ulica_odkial'");
         $result = $query->result();
         $ID_odkial =$result[0]->id;
-        echo $ID_odkial;
-
-
-
 
 
         $str = $this->input->post('Kam_id');
@@ -155,8 +133,6 @@ class Cesta extends CI_Controller
                                     WHERE Obec LIKE '$Obec_kam' AND Ulica LIKE '$Ulica_kam'");
         $result = $query->result();
         $ID_kam = $result[0]->id;
-        echo $ID_kam;
-
 
         $data = array('Datum'                   => $this->input->post('Datum'),
             'Cena'                   => $this->input->post('Cena'),
@@ -168,19 +144,13 @@ class Cesta extends CI_Controller
         $this->session->set_flashdata('cesta', 'Vaše dáta boli úspešne pridané');
         redirect(base_url('index.php/cesta'));
     }
-    /****************************  END INSERT FORM DATA ************************/
 
-
-    /****************************  START FETCH OR VIEW FORM DATA ***************/
     public function view_data()
     {
         $this->data['view_data']= $this->cestam->view_data();
         $this->load->view('welcome_message', $this->data, FALSE);
     }
-    /****************************  END FETCH OR VIEW FORM DATA ***************/
 
-
-    /****************************  START OPEN EDIT FORM WITH DATA *************/
     public function edit_data($id)
     {
         $data['edit_data']= $this->cestam->edit_data($id);
@@ -191,10 +161,7 @@ class Cesta extends CI_Controller
         $this->load->view('cesta/edit', $data);
         $this->load->view('template/footer');
     }
-    /****************************  END OPEN EDIT FORM WITH DATA ***************/
 
-
-    /****************************  START UPDATE DATA *************************/
     public function update_data($id)
     {
         $str = $this->input->post('Vodici_id');
@@ -221,12 +188,6 @@ class Cesta extends CI_Controller
         $result = $query->result();
         $ID_vodici = $result[0]->id;
 
-        echo $ID_vodici;
-
-
-
-
-
 
         $str = $this->input->post('Odkial_id');
         $boolean = 1;
@@ -254,9 +215,6 @@ class Cesta extends CI_Controller
         echo $ID_odkial;
 
 
-
-
-
         $str = $this->input->post('Kam_id');
         $boolean = 1;
         $Obec_kam = "";
@@ -280,8 +238,6 @@ class Cesta extends CI_Controller
                                     WHERE Obec LIKE '$Obec_kam' AND Ulica LIKE '$Ulica_kam'");
         $result = $query->result();
         $ID_kam = $result[0]->id;
-        echo $ID_kam;
-
 
         $data = array('Datum'                   => $this->input->post('Datum'),
             'Cena'                   => $this->input->post('Cena'),
@@ -294,10 +250,7 @@ class Cesta extends CI_Controller
         $this->session->set_flashdata('cesta', 'Vaše dáta boli úspešne upravené');
         redirect(base_url('index.php/cesta'));
     }
-    /****************************  END UPDATE DATA ****************************/
 
-
-    /****************************  START DELETE DATA **************************/
     public function delete_data($id)
     {
         $this->db->where('id', $id);

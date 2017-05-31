@@ -1,5 +1,4 @@
 <div id="container" class="container">
-
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h2 class="text-center" >Úprava záznamu </h2>
@@ -26,5 +25,4 @@
             <br><br>
         </div>
     </div>
-
 </div>

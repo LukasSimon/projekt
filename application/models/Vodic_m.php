@@ -30,10 +30,7 @@ class Vodic_m extends CI_Model
         $this->db->insert('vodici', $data);
         return TRUE;
     }
-    /**************************  END INSERT QUERY ****************/
 
-
-    /*************  START SELECT or VIEW ALL QUERY ***************/
     public function view_data(){
         $query=$this->db->query("SELECT v.id, v.Meno, v.Priezvisko, v.Telefonne_cislo, a.Znacka AS aZnacka
                                  FROM vodici v 
@@ -41,10 +38,7 @@ class Vodic_m extends CI_Model
                                  ORDER BY v.id ASC");
         return $query->result_array();
     }
-    /***************  END SELECT or VIEW ALL QUERY ***************/
 
-
-    /*************  START EDIT PARTICULER DATA QUERY *************/
     public function edit_data($id){
          $query=$this->db->query("SELECT v. *
                                  FROM vodici v
@@ -52,6 +46,4 @@ class Vodic_m extends CI_Model
 
         return $query->result_array();
     }
-    /*************  END EDIT PARTICULER DATA QUERY ***************/
-
 }

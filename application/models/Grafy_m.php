@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Grafy_m extends CI_Model{
-
-
     public function get_sluzby(){
         $query = $this->db->query("SELECT s.Datum AS datum, COUNT(s.id) AS pocet 
                                    FROM sluzba s GROUP BY s.Datum");
@@ -46,7 +44,5 @@ class Grafy_m extends CI_Model{
         }else{
             return false;
         }
-
     }
-
 }

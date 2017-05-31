@@ -29,10 +29,7 @@ class Sluzba_m extends CI_Model
         $this->db->insert('sluzba', $data);
         return TRUE;
     }
-    /**************************  END INSERT QUERY ****************/
 
-
-    /*************  START SELECT or VIEW ALL QUERY ***************/
     public function view_data($limit = 0, $offset = 0){
         if($offset != NULL) {
         $query=$this->db->query("SELECT s.id, s.Datum, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko
@@ -55,10 +52,7 @@ class Sluzba_m extends CI_Model
                 return false;
             }
     }
-    /***************  END SELECT or VIEW ALL QUERY ***************/
 
-
-    /*************  START EDIT PARTICULER DATA QUERY *************/
     public function edit_data($id){
         $query=$this->db->query("SELECT s. *
                                  FROM sluzba s 
@@ -66,6 +60,4 @@ class Sluzba_m extends CI_Model
 
         return $query->result_array();
     }
-    /*************  END EDIT PARTICULER DATA QUERY ***************/
-
 }

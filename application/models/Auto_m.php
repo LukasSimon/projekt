@@ -31,26 +31,18 @@ class Auto_m extends CI_Model
         $this->db->insert('auta', $data);
         return TRUE;
     }
-    /**************************  END INSERT QUERY ****************/
 
-
-    /*************  START SELECT or VIEW ALL QUERY ***************/
     public function view_data(){
         $query=$this->db->query("SELECT ud.*
                                  FROM auta ud 
                                  ORDER BY ud.id ASC");
         return $query->result_array();
     }
-    /***************  END SELECT or VIEW ALL QUERY ***************/
 
-
-    /*************  START EDIT PARTICULER DATA QUERY *************/
     public function edit_data($id){
         $query=$this->db->query("SELECT ud.*
                                  FROM auta ud 
                                  WHERE ud.id = $id");
         return $query->result_array();
     }
-    /*************  END EDIT PARTICULER DATA QUERY ***************/
-
 }

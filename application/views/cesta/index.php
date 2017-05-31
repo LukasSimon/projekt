@@ -1,16 +1,11 @@
 <div id="container" class="container" >
 
-    <!--******************** START SESSION SETFLASH MESSAGES *****************************-->
     <?php if($this->session->flashdata('cesta')){?>
         <div class="alert alert-success">
             <?php echo $this->session->flashdata('cesta')?>
         </div>
     <?php } ?></div>
-<!--************************* END SESSION SETFLASH MESSAGES   ************************-->
 
-
-
-<!--*************************  START  DISPLAY ALL THE RECODEDS *************************-->
 <div id="page-wrapper" >
     <div id="page-inner">
 
@@ -86,5 +81,5 @@
     </div>
 </div>
 </div>
-<!--*********************  END  DISPLAY ALL THE RECODEDS ******************************-->
+
 
