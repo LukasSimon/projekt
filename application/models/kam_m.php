@@ -6,14 +6,13 @@ class kam_m extends CI_Model
     {
     }
 
-    public function getAuto($id = FALSE)
-    {
-        if ($id === FALSE) {
-            $query = $this->db->get('kam');
-            return $query->result_array();
+    public function getKam($limit = 0, $offset = 0){
+        $query = $this->db->get('kam', $limit, $offset);
+        if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
         }
-        $query = $this->db->get_where('kam', array('id' => $id));
-        return $query->row_array();
     }
 
     public function get_auta_by_id($id)
@@ -35,11 +34,13 @@ class kam_m extends CI_Model
 
 
     /*************  START SELECT or VIEW ALL QUERY ***************/
-    public function view_data(){
-        $query=$this->db->query("SELECT k.*
-                                 FROM kam k 
-                                 ORDER BY k.id ASC");
-        return $query->result_array();
+    public function view_data($limit = 0, $offset = 0){
+        $query = $this->db->get('kam', $limit, $offset);
+        if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
+        }
     }
     /***************  END SELECT or VIEW ALL QUERY ***************/
 

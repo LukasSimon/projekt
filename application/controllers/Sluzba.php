@@ -16,8 +16,41 @@ class Sluzba extends CI_Controller
     }
 
     public function index(){
+        $this->load->library('pagination');
+        $query = $this->db->query("SELECT COUNT(*) AS count FROM sluzba");
+        $result = $query->result();
+        $count = $result[0]->count;
+        $config = array(
+            'base_url'   => base_url().'index.php/Sluzba/index/',
+            'total_rows' => $count,
+            'per_page'   => 4,
 
-        $this->data['view_data']= $this->sluzbam->view_data();
+        );
+
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['first_link'] = 'prvý';
+        $config['last_link'] = 'posledný';
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="prev">';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+
+        $this->pagination->initialize($config);
+
+
+
+        $this->data['view_data']= $this->sluzbam->view_data($config['per_page'], $this->uri->segment(3));
 
         $this->load->view('template/header', $this->data, FALSE);
         $this->load->view('template/navigation');

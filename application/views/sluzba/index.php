@@ -49,11 +49,11 @@
                                 foreach ($view_data as $key => $data) {
                                     ?>
                                     <tr <?php if($i%2==0){echo 'class="even"';}else{echo'class="odd"';}?>>
-                                        <td><?php echo $i; ?></td>
-                                        <td><?php echo $data['Datum']; ?></td>
-                                        <td><?php echo $data['vMeno']; ?> <?php echo $data['vPriezvisko']; ?></td>
-                                        <td><a href="<?php echo site_url('Sluzba/edit_data/'. $data['id'].''); ?>">Edit</a></td>
-                                        <td><a href="<?php echo site_url('Sluzba/delete_data/'. $data['id'].''); ?>">Delete</a></td>
+                                        <td><?php echo $data->id; ?></td>
+                                        <td><?php echo $data->Datum; ?></td>
+                                        <td><?php echo $data->vMeno; ?> <?php echo $data->vPriezvisko; ?></td>
+                                        <td><a href="<?php echo site_url('Sluzba/edit_data/'. $data->id.''); ?>">Edit</a></td>
+                                        <td><a href="<?php echo site_url('Sluzba/delete_data/'. $data->id.''); ?>">Delete</a></td>
                                     </tr>
                                     <?php
                                     $i++;
@@ -69,6 +69,8 @@
 
                             </tbody>
                         </table>
+
+                        <?=$this->pagination->create_links() ?>
                     </div>
                 </div>
             </div>

@@ -36,7 +36,7 @@
                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                             <tr>
-                                <th style="color: black">No.</th>
+
                                 <th style="color: black">Dátum</th>
                                 <th style="color: black">Cena</th>
                                 <th style="color: black">Vodič</th>
@@ -52,15 +52,15 @@
                                 foreach ($view_data as $key => $data) {
                                     ?>
                                     <tr <?php if($i%2==0){echo 'class="even"';}else{echo'class="odd"';}?>>
-                                        <td><?php echo $i; ?></td>
-                                        <td><?php echo $data['Datum']; ?></td>
-                                        <td><?php echo $data['Cena']; ?></td>
-                                        <td><?php echo $data['vMeno']; ?> <?php echo $data['vPriezvisko']; ?></td>
-                                        <td><?php echo $data['oObec']; ?> <?php echo $data['oUlica']; ?></td>
-                                        <td><?php echo $data['kObec']; ?> <?php echo $data['kUlica']; ?></td>
 
-                                        <td><a href="<?php echo site_url('Cesta/edit_data/'. $data['id'].''); ?>">Edit</a></td>
-                                        <td><a href="<?php echo site_url('Cesta/delete_data/'. $data['id'].''); ?>">Delete</a></td>
+                                        <td><?php echo $data->Datum; ?></td>
+                                        <td><?php echo $data->Cena; ?></td>
+                                        <td><?php echo $data->vMeno; ?> <?php echo $data->vPriezvisko; ?></td>
+                                        <td><?php echo $data->oObec; ?> <?php echo $data->oUlica; ?></td>
+                                        <td><?php echo $data->kObec; ?> <?php echo $data->kUlica; ?></td>
+
+                                        <td><a href="<?php echo site_url('Cesta/edit_data/'. $data->id.''); ?>">Edit</a></td>
+                                        <td><a href="<?php echo site_url('Cesta/delete_data/'. $data->id.''); ?>">Delete</a></td>
                                     </tr>
                                     <?php
                                     $i++;
@@ -76,6 +76,9 @@
 
                             </tbody>
                         </table>
+
+                            <?=$this->pagination->create_links() ?>
+
                     </div>
                 </div>
             </div>

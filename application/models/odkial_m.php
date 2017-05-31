@@ -35,11 +35,13 @@ class odkial_m extends CI_Model
 
 
     /*************  START SELECT or VIEW ALL QUERY ***************/
-    public function view_data(){
-        $query=$this->db->query("SELECT o.*
-                                 FROM odkial o 
-                                 ORDER BY o.id ASC");
-        return $query->result_array();
+    public function view_data($limit = 0, $offset = 0){
+        $query = $this->db->get('odkial', $limit, $offset);
+        if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
+        }
     }
     /***************  END SELECT or VIEW ALL QUERY ***************/
 

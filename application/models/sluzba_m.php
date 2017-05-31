@@ -33,12 +33,27 @@ class sluzba_m extends CI_Model
 
 
     /*************  START SELECT or VIEW ALL QUERY ***************/
-    public function view_data(){
+    public function view_data($limit = 0, $offset = 0){
+        if($offset != NULL) {
         $query=$this->db->query("SELECT s.id, s.Datum, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko
                                  FROM sluzba s
                                  INNER JOIN vodici v ON s.Vodici_id = v.id
-                                 ORDER BY s.id ASC");
-        return $query->result_array();
+                                 ORDER BY s.id ASC                    
+                                 LIMIT $offset, $limit");
+            }
+            else{
+                $query=$this->db->query("SELECT s.id, s.Datum, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko
+                                 FROM sluzba s
+                                 INNER JOIN vodici v ON s.Vodici_id = v.id
+                                 ORDER BY s.id ASC 
+                                 LIMIT 0, $limit");
+            }
+
+            if($query->num_rows() > 0){
+                return $query->result();
+            }else{
+                return false;
+            }
     }
     /***************  END SELECT or VIEW ALL QUERY ***************/
 

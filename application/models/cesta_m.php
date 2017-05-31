@@ -53,14 +53,34 @@ class cesta_m extends CI_Model
 
 
     /*************  START SELECT or VIEW ALL QUERY ***************/
-    public function view_data(){
-        $query=$this->db->query("SELECT c.id, c.Datum, c.Cena, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko, o.Obec AS oObec, o.Ulica AS oUlica, k.Obec AS kObec, k.Ulica AS kUlica
+    public function view_data($limit = 0, $offset = 0){
+        if($offset != NULL) {
+            $query=$this->db->query("SELECT c.id, c.Datum, c.Cena, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko, o.Obec AS oObec, o.Ulica AS oUlica, k.Obec AS kObec, k.Ulica AS kUlica
                                  FROM cesta c
                                  INNER JOIN vodici v ON c.Vodici_id = v.id
                                  INNER JOIN odkial o ON c.Odkial_id = o.id
                                  INNER JOIN kam k ON c.Kam_id = k.id
-                                 ORDER BY c.id");
-        return $query->result_array();
+                                 ORDER BY c.id
+                                 LIMIT $offset, $limit");
+            }
+            else{
+                $query=$this->db->query("SELECT c.id, c.Datum, c.Cena, v.Meno AS vMeno, v.Priezvisko AS vPriezvisko, o.Obec AS oObec, o.Ulica AS oUlica, k.Obec AS kObec, k.Ulica AS kUlica
+                                 FROM cesta c
+                                 INNER JOIN vodici v ON c.Vodici_id = v.id
+                                 INNER JOIN odkial o ON c.Odkial_id = o.id
+                                 INNER JOIN kam k ON c.Kam_id = k.id
+                                 ORDER BY c.id
+                                 LIMIT 0, $limit");
+
+
+
+            }
+
+            if($query->num_rows() > 0){
+                return $query->result();
+            }else{
+                return false;
+            }
     }
     /***************  END SELECT or VIEW ALL QUERY ***************/
 
