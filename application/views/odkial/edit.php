@@ -16,6 +16,7 @@
                         <input type="text" class="form-control" name="Ulica" value="<?php echo $data['Ulica']; ?>" required>
                         <br>
                         <br><br>
+                        <a href="<?php echo base_url('index.php/Odkial'); ?>"<button class="btn btn-danger pull">Späť</button></a>
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>
                         <br><br>
                     </form>

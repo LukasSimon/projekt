@@ -16,6 +16,7 @@
                         <input type="text" class="form-control" name="Evidencne_cislo" value="<?php echo $data['Evidencne_cislo']; ?>" required>
                         <br>
                         <br><br>
+                        <a href="<?php echo base_url('index.php/Auto'); ?>"<button class="btn btn-danger pull">Späť</button></a>
                         <button type="submit" class="btn btn-primary pull-right">Submit</button>
                         <br><br>
                     </form>

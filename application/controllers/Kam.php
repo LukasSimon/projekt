@@ -17,6 +17,10 @@ class Kam extends CI_Controller
 
     public function index()
     {
+
+
+
+
         $this->data['view_data']= $this->kamm->view_data();
 
         $this->load->view('template/header', $this->data, FALSE);

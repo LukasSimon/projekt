@@ -10,7 +10,7 @@
                     ?>
                     <form method="post" action="<?php echo base_url('index.php/Cesta/update_data/'.$data['id'].''); ?>" name="data_register">
                         <label for="Datum" style="color: white">Datum</label>
-                        <input type="text" class="form-control" name="Datum" value="<?php echo $data['Datum']; ?>" required >
+                        <input type="date" class="form-control" name="Datum" value="<?php echo $data['Datum']; ?>" required >
                         <br>
                         <label for="Cena" style="color: white">Cena</label>
                         <input type="number" class="form-control" name="Cena" value="<?php echo $data['Cena']; ?>" required >

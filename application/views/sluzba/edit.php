@@ -10,7 +10,7 @@
                     ?>
                     <form method="post" action="<?php echo base_url('index.php/Sluzba/update_data/'.$data['id'].''); ?>" name="data_register">
                         <label for="Datum" style="color: white">Datum</label>
-                        <input type="text" class="form-control" name="Datum" value="<?php echo $data['Datum']; ?>" required >
+                        <input type="date" class="form-control" name="Datum" value="<?php echo $data['Datum']; ?>" required >
                         <br>
                         <br>
                         <label for="title"   style="color: white">Vodič</label>

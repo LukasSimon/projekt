@@ -10,6 +10,7 @@
                 <label for="Ulica" style="color: white">Ulica</label>
                 <input type="text" class="form-control" name="Ulica" required>
                 <br>
+                <a href="<?php echo base_url('index.php/Odkial'); ?>"<button class="btn btn-danger pull">Späť</button></a>
                 <button type="submit" class="btn btn-primary pull-right">Submit</button>
                 <br><br>
             </form>

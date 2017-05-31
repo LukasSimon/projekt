@@ -3,6 +3,7 @@
   <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
       <title>Taxi služba</title>
       <!-- BOOTSTRAP STYLES-->
       <link href="<?php echo base_url();?>assets/css/bootstrap.css" rel="stylesheet" />
@@ -27,7 +28,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/auto/index.php">Taxi služba</a>
+              <a class="navbar-brand" href="<?php echo base_url(); ?>index.php/Home/index">Taxi služba</a>
           </div>
           <div style="color: white;
 padding: 15px 50px 5px 50px;
